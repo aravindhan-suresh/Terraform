@@ -282,7 +282,7 @@ resource "aws_autoscaling_group" "Demo-ASG-tf" {
   max_size           = 2
   min_size           = 1
   force_delete       = true
-  depends_on 	     = ["aws_lb.ALB-tf"]
+  depends_on 	     = [aws_lb.ALB-tf]
   target_group_arns  =  ["${aws_lb_target_group.TG-tf.arn}"]
   health_check_type  = "EC2"
   launch_configuration = aws_launch_configuration.webserver-launch-config.name
@@ -299,7 +299,7 @@ resource "aws_autoscaling_group" "Demo-ASG-tf" {
 
 resource "aws_lb_target_group" "TG-tf" {
   name     = "Demo-TargetGroup-tf"
-  depends_on = ["aws_vpc.main"]
+  depends_on = [aws_vpc.main]
   port     = 80
   protocol = "HTTP"
   vpc_id   = "${aws_vpc.main.id}"
