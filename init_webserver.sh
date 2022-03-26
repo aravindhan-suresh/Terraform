@@ -10,6 +10,7 @@
   amazon-linux-extras install nginx1 -y
   systemctl start nginx
   systemctl enable nginx
+  service nginx status
   
 # Print the hostname which includes instance details on nginx homepage  
   sudo echo Hello from `hostname -f` > /usr/share/nginx/html/index.html
