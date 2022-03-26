@@ -2,9 +2,6 @@ variable "ami"{
  type = string
   default = "ami-010aff33ed5991201"
 }
-variable "keyname"{
-  default = "Default"
-}
 variable "region" {
   type        = string
   default     = "ap-south-1"

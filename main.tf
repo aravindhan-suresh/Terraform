@@ -251,7 +251,6 @@ resource "aws_launch_configuration" "webserver-launch-config" {
   name_prefix   = "webserver-launch-config"
   image_id      =  var.ami
   instance_type = "t2.micro"
-  key_name	= var.keyname
   security_groups = ["${aws_security_group.webserver_sg.id}"]
   
   root_block_device {
